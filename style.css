@@ -199,6 +199,9 @@ section{
     font-size:0.9rem;
     margin-top: 20px;
 }
+.svg-competences, .mon-svg{
+    color:var(--linkcolor);
+}
 /*PROJETS*/
 /*.carousel{
     display:flex;
@@ -288,6 +291,10 @@ form{
 }
 .btn2:hover{
     background-color:var(--clickcolor);
+}
+.mon-svg{
+   margin-right: 10px;
+   padding-top:5px;
 }
 .lien a{
     background-color: var(--fondcolor);
