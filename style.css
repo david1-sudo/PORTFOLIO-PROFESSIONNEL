@@ -11,10 +11,12 @@
     padding:0px;
 }
 body{
-    margin-top:100px;
+    /*margin-top:100px;*/
     background-color: var(--fondcolor);
     color:var(--textcolor);
     font-size:1.2rem;
+    font-weight: 100;
+    /*font-family:Verdana, Geneva, Tahoma, sans-serif;*/
 }
 /*HEADER*/
 header{
@@ -24,7 +26,7 @@ header{
     right:0;
     position:fixed;
     height:100px;
-    background-color: var(--fondcolor);
+    background-color:var(--fondcolor);
     z-index:100;
 
     display:flex;
@@ -62,11 +64,14 @@ nav a{
     color:var(--linkcolor);
 }
 /*MAIN*/
-main, footer{
+#test2,#accueil{
     width:90%;
     max-width: 1200px;
     margin:auto;
 
+}
+#test1{
+    background-color: black;
 }
 section{
     margin:50px 0px 50px 0px;
@@ -99,9 +104,6 @@ section{
 .intro h1 span{
     color:var(--linkcolor);
 }
-.intro p{
-    color:var(--textcolor);
-}
 .intro a{
     color:black;
     padding:10px 20px 10px 20px;
@@ -110,7 +112,7 @@ section{
     border-radius:20px;
 }
 /*A PROPOS*/
-#apropos,#parcours,#competences{
+#apropos,#parcours,#competences,#projets,#contact{
     background-color: var(--cardcolor);
     border-radius:20px;
     padding:50px;
@@ -144,11 +146,10 @@ section{
 /*PARCOURS*/
 #parcours div p{
     min-height: 60px;
-    border-bottom: 1px solid var(--textcolor);
     padding-top:10px;
 }
 .fin{
-    border: none;
+    border-bottom: 1px solid var(--textcolor);
 }
 /*COMPETENCES*/
 #competences .grid{
@@ -163,13 +164,47 @@ section{
     border-radius:10px;
     min-height: 120px;
     padding:10px;
+    text-align:center;
 }
-#competences .card:hover{
+#competences .card:hover, .elem:hover{
     background-color: var(--cardhover);
     border: 1px solid var(--textcolor);
+}
+#competences .card h4{
+   font-size:1rem;
+   margin-top:10px;
 }
 #competences .card p{
     font-size:0.9rem;
     margin-top: 20px;
 }
 /*PROJETS*/
+.ligne{
+    display:flex;
+    gap:20px;
+    height:200px;
+}
+.elem{
+    width:300px;
+    background-color:var(--fondcolor);
+    border-radius:10px;
+    padding:10px;
+    display:flex;
+    flex-direction: column;
+    gap:10px;
+}
+.description{
+    height: 100px;
+}
+.long{
+    min-width:60%;
+}
+.last{
+    color:black;
+    /*min-width:60%;*/
+    background-color: var(--linkcolor);
+    text-align:center;
+    border-radius: 20px;
+    padding:5px 10px 5px 10px;
+    text-decoration:none;
+}
