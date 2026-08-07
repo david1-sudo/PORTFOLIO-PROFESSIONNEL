@@ -3,7 +3,7 @@
     --cardcolor:#1e1e1e;
     --cardhover:#2a2a2a;
     --linkcolor:#b8925e;
-    --btncolor:#c9a87c;
+    --clickcolor:#99641f;
     --textcolor:#b0a89a;
 }
 *{
@@ -16,6 +16,7 @@ body{
     color:var(--textcolor);
     font-size:1.2rem;
     font-weight:50;
+    box-sizing: border-box;
     /*font-family:Verdana, Geneva, Tahoma, sans-serif;*/
 }
 /*HEADER*/
@@ -25,7 +26,7 @@ header{
     left:0;
     right:0;
     position:fixed;
-    height:100px;
+    height:70px;
     background-color:var(--fondcolor);
     z-index:100;
 
@@ -53,11 +54,33 @@ nav a{
     text-decoration:none;
     color:var(--textcolor);
 }
+.axe:hover{
+    color:var(--linkcolor);
+    transition: 0.5s;
+}
 .btn{
     color:black;
     background-color: var(--linkcolor);
     padding:10px;
     border-radius:20px;
+}
+.btn:hover{
+    background-color:var(--clickcolor);
+}
+#menu-toggle{
+    display:none;
+}
+.hamburgeur{
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap:5px;
+}
+.hamburgeur p{
+    display:block;
+    background-color: var(--linkcolor);
+    height: 2px;
+    width:30px;
 }
 .logo{
     font-size:1.5rem;
@@ -92,14 +115,12 @@ section{
 .intro h3{
     font-size:1.2rem;
     color:var(--linkcolor);
-    /*color:black;
-    padding:10px;
-    background-color: var(--linkcolor);
-    border-radius:20px;
-    text-align: center;*/
 }
 .intro h1 span{
     color:var(--linkcolor);
+}
+.avant{
+    margin-bottom: 50px;
 }
 .intro a{
     color:black;
@@ -107,6 +128,9 @@ section{
     background-color: var(--linkcolor);
     text-decoration: none;
     border-radius:20px;
+}
+.intro a:hover{
+    background-color:var(--clickcolor);
 }
 /*A PROPOS*/
 #apropos,#parcours,#competences,#projets,#contact{
@@ -151,7 +175,7 @@ section{
 /*COMPETENCES*/
 #competences .grid{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+    grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
     overflow: hidden;
 
     gap:10px;
@@ -165,7 +189,7 @@ section{
 }
 #competences .card:hover, .elem:hover{
     background-color: var(--cardhover);
-    border: 1px solid var(--textcolor);
+    border: 1px solid var(--linkcolor);
 }
 #competences .card h4{
    font-size:1rem;
@@ -176,13 +200,20 @@ section{
     margin-top: 20px;
 }
 /*PROJETS*/
+/*.carousel{
+    display:flex;
+    align-items: center;
+}*/
 .ligne{
     display:flex;
     gap:20px;
-    height:200px;
+    overflow:auto;
+    scroll-behavior: smooth;
+    /*scrollbar-width: none; POUR NE PAS MARQUER LA LARGEUR DU SCROOL*/
 }
 .elem{
-    width:300px;
+    min-width:300px;
+    height:150px;
     background-color:var(--fondcolor);
     border-radius:10px;
     padding:10px;
@@ -194,11 +225,11 @@ section{
     height: 100px;
 }
 .long{
-    min-width:60%;
+    min-width:150px;
 }
 .last{
     color:black;
-    /*min-width:60%;*/
+    min-width:150px;
     background-color: var(--linkcolor);
     text-align:center;
     border-radius: 20px;
@@ -230,8 +261,9 @@ form{
     gap:50px;
 }
 .info{
-    min-width:400px;
+    /*min-width:300px;*/
     min-height: 40px;
+    width:90%;
     padding:10px;
     margin:10px 0px;
     color:var(--textcolor);
@@ -241,6 +273,21 @@ form{
 }
 .info:focus{
     border:1px solid var(--linkcolor);
+}
+.btn2{
+    width:100px;
+    height:40px;
+    color:black;
+    background-color: var(--linkcolor);
+    outline:none;
+    border:none;
+    border-radius: 5px;
+    padding:5px 10px;
+    text-align:center;
+    margin-right:10px;
+}
+.btn2:hover{
+    background-color:var(--clickcolor);
 }
 .lien a{
     background-color: var(--fondcolor);
@@ -253,4 +300,51 @@ form{
 .lien a:hover{
     background-color: var(--cardhover);
     border:1px solid var(--linkcolor);
+}
+@media(max-width:768px){
+    header{
+        height:70px;
+    }
+    .hamburgeur{
+        display:flex;
+    }
+    nav ul{
+        position:fixed;
+        display:flex;
+        flex-direction: column;
+        left:-100%;
+        width:100%;
+        top:70px;
+        background-color: var(--fondcolor);
+        transition:0.3s;
+        padding: 10px;
+    }
+    nav li{
+        border-bottom: var(--linkcolor);
+    }
+    #menu-toggle:checked ~ ul{
+        display: flex;
+    }
+    #accueil{
+        flex-direction: column-reverse;
+        text-align: center;
+        justify-content:center;
+        align-items: center;
+        min-height:100vh;
+    }
+    .prise-contact{
+        flex-direction:column;
+        gap:30px;
+    }
+    /*A PROPOS*/
+    #apropos,#parcours,#competences,#projets,#contact{
+        background-color: var(--cardcolor);
+        border-radius:20px;
+        padding:30px;
+        display:flex;
+        flex-direction: column;
+        gap:10px;
+        /*border: 0.1px solid var(--textcolor);*/
+    }
+
 }
