@@ -68,6 +68,9 @@ main, footer{
     margin:auto;
 
 }
+section{
+    margin:50px 0px 50px 0px;
+}
 /*ACCUEIL*/
 #accueil{
     min-height:100vh;
@@ -107,20 +110,66 @@ main, footer{
     border-radius:20px;
 }
 /*A PROPOS*/
-#apropos{
+#apropos,#parcours,#competences{
     background-color: var(--cardcolor);
     border-radius:20px;
     padding:50px;
     display:flex;
     flex-direction: column;
     gap:20px;
+    /*border: 0.1px solid var(--textcolor);*/
 }
 .titre{
-    padding-left:10px;
+    padding:10px;
     border-left:5px solid var(--linkcolor);
     color:white;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 .one{
     color:var(--linkcolor);
 }
+.two{
+    color:white;
+}
+#apropos div{
+    display:flex;
+    flex-wrap: wrap;
+    gap:10px;
+}
+#apropos div p{
+    background-color: var(--fondcolor);
+    padding:10px;
+    border-radius:20px;
+}
+/*PARCOURS*/
+#parcours div p{
+    min-height: 60px;
+    border-bottom: 1px solid var(--textcolor);
+    padding-top:10px;
+}
+.fin{
+    border: none;
+}
+/*COMPETENCES*/
+#competences .grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    overflow: hidden;
+
+    gap:10px;
+}
+#competences .card{
+    background-color: var(--fondcolor);
+    border-radius:10px;
+    min-height: 120px;
+    padding:10px;
+}
+#competences .card:hover{
+    background-color: var(--cardhover);
+    border: 1px solid var(--textcolor);
+}
+#competences .card p{
+    font-size:0.9rem;
+    margin-top: 20px;
+}
+/*PROJETS*/
