@@ -243,14 +243,13 @@ section{
     height: 100px;
 }
 .long{
-    min-width:150px;
-}
-.last{
-    color:black;
-    min-width:150px;
+    width: 200px;
     background-color: var(--linkcolor);
     text-align:center;
     border-radius: 20px;
+}
+.last{
+    color:black;
     padding:5px 10px 5px 10px;
     text-decoration:none;
 }
@@ -343,9 +342,6 @@ form{
        border-bottom:1px solid var(--textcolor);
        border-top:1px solid var(--textcolor);
     }
-    nav li{
-        border-bottom: var(--textcolor);
-    }
     .btn{
         color:var(--textcolor);
         background-color: var(--fondcolor);
@@ -354,6 +350,9 @@ form{
     #menu-toggle:checked~nav ul{
         display:flex;
         left:0;
+    }
+    nav li{
+        border-bottom: var(--textcolor);
     }
     #accueil{
         flex-direction: column-reverse;
