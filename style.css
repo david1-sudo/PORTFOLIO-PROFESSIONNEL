@@ -76,7 +76,7 @@ nav a{
     flex-direction: column;
     gap:5px;
 }
-.hamburgeur p{
+.hamburgeur span{
     display:block;
     background-color: var(--linkcolor);
     height: 2px;
@@ -316,21 +316,28 @@ form{
         display:flex;
     }
     nav ul{
-        position:fixed;
-        display:flex;
-        flex-direction: column;
-        left:-100%;
-        width:100%;
-        top:70px;
-        background-color: var(--fondcolor);
-        transition:0.3s;
-        padding: 10px;
+       position:fixed;
+       left:-1000px;
+       width:100%;
+       flex-direction: column;
+       top: 70px;
+       padding:10px;
+       transition:0.3s;
+       background-color: var(--fondcolor);
+       z-index:1000;
+       border-bottom:1px solid var(--textcolor);
+       border-top:1px solid var(--textcolor);
     }
     nav li{
-        border-bottom: var(--linkcolor);
+        border-bottom: var(--textcolor);
     }
-    #menu-toggle:checked ~ ul{
-        display: flex;
+    .btn{
+        color:var(--textcolor);
+        background-color: var(--fondcolor);
+        padding:0px;
+    }
+    #menu-toggle:checked~nav ul{
+        left:0;
     }
     #accueil{
         flex-direction: column-reverse;
