@@ -14,9 +14,11 @@ body{
     /*margin-top:100px;*/
     background-color: var(--fondcolor);
     color:var(--textcolor);
-    font-size:1.2rem;
+    font-size:1.3rem;
     font-weight:50;
+    font-family: serif;
     box-sizing: border-box;
+
     /*font-family:Verdana, Geneva, Tahoma, sans-serif;*/
 }
 /*HEADER*/
@@ -103,7 +105,6 @@ section{
     align-items:center;
 
     gap:50px;
-    font-size:1.2rem;
 }
 .intro{
     width:50%;
@@ -120,7 +121,7 @@ section{
     color:var(--linkcolor);
 }
 .avant{
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 .intro a{
     color:black;
@@ -151,10 +152,10 @@ section{
 #apropos,#parcours,#competences,#projets,#contact{
     background-color: var(--cardcolor);
     border-radius:20px;
-    padding:50px;
+    padding:35px;
     display:flex;
     flex-direction: column;
-    gap:20px;
+    gap:15px;
     /*border: 0.1px solid var(--textcolor);*/
 }
 .titre{
@@ -265,6 +266,7 @@ footer p{
 }
 .prise-contact{
     display:flex;
+    align-items:center;
     gap:10px;
 }
 form{
@@ -275,7 +277,7 @@ form{
     display:flex;
     flex-direction: column;
 
-    gap:50px;
+    gap:30px;
 }
 .info{
     /*min-width:300px;*/
@@ -323,8 +325,11 @@ form{
     border:1px solid var(--linkcolor);
 }
 @media(max-width:768px){
+    body{
+        font-size: 1.2rem;
+    }
     header{
-        height:70px;
+        height:50px;
     }
     .hamburgeur{
         display:flex;
@@ -334,7 +339,7 @@ form{
        position:fixed;
        width:100%;
        flex-direction: column;
-       top: 70px;
+       top: 50px;
        padding:10px;
        transition:0.3s;
        background-color: var(--fondcolor);
@@ -362,26 +367,39 @@ form{
         min-height:100vh;
         gap:20px;
     }
+    .avant{
+    margin-bottom: 20px;
+    }
     .image{
-        width:200px;
-        height:200px;
+        width:160px;
+        height:160px;
     }
     .mon-image{
-        transform: translate(0px,170px);
+        transform: translate(0px,185px);
     }
     .prise-contact{
         flex-direction:column;
-        gap:30px;
+        gap:10px;
     }
     /*A PROPOS*/
     #apropos,#parcours,#competences,#projets,#contact{
         background-color: var(--cardcolor);
         border-radius:20px;
-        padding:30px;
+        padding:20px;
         display:flex;
         flex-direction: column;
-        gap:10px;
+        gap:7px;
         /*border: 0.1px solid var(--textcolor);*/
+    }
+    #contact h2{
+        display:none;
+    }
+    .mes-liens{
+        margin:20px 0px;
+    }
+    /*FORMULAIRE*/
+    .chat{
+        display:none;
     }
 
 }
